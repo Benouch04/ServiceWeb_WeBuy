@@ -16,21 +16,21 @@ public class ProductController {
     private ProductService service;
 
     @PostMapping("/addProduct")
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(Product product) {
         return service.saveProduct(product);
     }
 
     @PostMapping("/addProducts")
-    public List<Product> addProducts(@RequestBody List<Product> products) {
+    public List<Product> addProducts(List<Product> products) {
         return service.saveProducts(products);
     }
 
-    @GetMapping("/products")
+    @GetMapping("/product_index")
     public List<Product> findAllProducts() {
         return service.getProducts();
     }
 
-    @GetMapping("/product/id/{id}")
+    @GetMapping("/product/{id}")
     public Product findProductById(@PathVariable int id) {
         return service.getProductById(id);
     }
@@ -41,7 +41,7 @@ public class ProductController {
     }
 
     @PutMapping("/product/update")
-    public Product updateProduct(@RequestBody Product product) {
+    public Product updateProduct(Product product) {
         return service.updateProduct(product);
     }
 

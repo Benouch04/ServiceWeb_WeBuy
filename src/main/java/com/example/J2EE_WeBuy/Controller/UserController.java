@@ -20,21 +20,21 @@ import com.example.J2EE_WeBuy.Service.UserService;
 public class UserController {
 
 	@Autowired 
-	
 	private UserService userservice;
 	
 	
 	@PostMapping("/addUser")
-	public User addUser(@RequestBody User user) {
+	public User addUser(User user) {
+		System.out.println(user.getPrenom());
 	    return userservice.saveUser(user);
 	}
 	
 	@PostMapping("/addUsers")
-	public List<User> addUsers(@RequestBody List<User> users) {
+	public List<User> addUsers(List<User> users) {
 		return userservice.saveUser(users);
 	}
 	
-	@GetMapping("/list_user")
+	@GetMapping("/user_index")
 	public List<User> findAllUsers(){
 		return userservice.getUsers();
 	}
@@ -43,19 +43,9 @@ public class UserController {
 	public User findUserById(@PathVariable int id) {
 		return userservice.getUsersById(id);
 	}
-	
-	@GetMapping("/user/{nom}")
-	public User findUserByNom(@PathVariable String nom) {
-		return userservice.getUsersByNom(nom);
-	}
 
-	@GetMapping("/user/{email}")
-	public User findUserByEmail(@PathVariable String email) {
-		return userservice.getUserByEmail(email);
-	}
-	
 	@PutMapping("/user/update")
-	public User updateUser(@RequestBody User user) {
+	public User updateUser(User user) {
 		return userservice.updateUser(user);
 	}
 	@DeleteMapping("/user/delete/{id}")

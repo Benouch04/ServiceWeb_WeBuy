@@ -24,16 +24,16 @@ public class ShopController {
 	
 	
 	@PostMapping("/addShop")
-	public Shop addShop(@RequestBody Shop shop) {
+	public Shop addShop(Shop shop) {
 	    return shopservice.saveShop(shop);
 	}
 	
 	@PostMapping("/addShops")
-	public List<Shop> addShops(@RequestBody List<Shop> shops) {
+	public List<Shop> addShops(List<Shop> shops) {
 		return shopservice.saveShop(shops);
 	}
 	
-	@GetMapping("/list_shop")
+	@GetMapping("/shop_index")
 	public List<Shop> findAllProducts(){
 		return shopservice.getShops();
 	}
@@ -42,38 +42,13 @@ public class ShopController {
 	public Shop findShopById(@PathVariable int id) {
 		return shopservice.getShopsById(id);
 	}
-	
-	@GetMapping("/shop/{nom}")
-	public Shop findShopByNom(@PathVariable String nom) {
-		return shopservice.getShopsByNom(nom);
-	}
-
-	@GetMapping("/shop/{adresse}")
-	public Shop findShopByAdresse(@PathVariable String adresse) {
-		return shopservice.getShopByAdresse(adresse);
-	}
-	
-	@GetMapping("/shop/{latitude}")
-	public Shop findShopByLatitude(@PathVariable String latitude) {
-		return shopservice.getShopByLatitude(latitude);
-	}
-	
-	@GetMapping("/shop/{longitude}")
-	public Shop findShopByLongitude(@PathVariable String longitude) {
-		return shopservice.getShopByLongitude(longitude);
-	}
-	
-	@GetMapping("/shop/{logo}")
-	public Shop findShopBLogo(@PathVariable String logo) {
-		return shopservice.getShopByLogo(logo);
-	}
-	
-	@PutMapping("/update/shop")
-	public Shop updateShop(@RequestBody Shop shop) {
+		
+	@PutMapping("/shop/update")
+	public Shop updateShop(Shop shop) {
 		return shopservice.updateShop(shop);
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/shop/delete/{id}")
 	public String deleteShop(@PathVariable int id) {
 		return shopservice.deleteShop(id);
 	}
