@@ -68,7 +68,7 @@ public class ShopController {
 		return shopservice.getShopByLogo(logo);
 	}
 	
-	@PutMapping("/update")
+	@PutMapping("/update/shop")
 	public Shop updateShop(@RequestBody Shop shop) {
 		return shopservice.updateShop(shop);
 	}

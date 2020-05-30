@@ -54,12 +54,11 @@ public class UserController {
 		return userservice.getUserByEmail(email);
 	}
 	
-	@PutMapping("/update")
+	@PutMapping("/user/update")
 	public User updateUser(@RequestBody User user) {
 		return userservice.updateUser(user);
 	}
-	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/user/delete/{id}")
 	public String deleteUser(@PathVariable int id) {
 		return userservice.deleteUser(id);
 	}

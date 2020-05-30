@@ -1,4 +1,4 @@
-/*package com.example.J2EE_WeBuy.Entity;
+package com.example.J2EE_WeBuy.Entity;
 
 
 import javax.persistence.Entity;
@@ -28,10 +28,10 @@ public class Shop {
 	private String logo;
 		
 	public int getId() {
-		return id;
+		return this.id;
 	}
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
 	public void setNom(String nom) {
@@ -59,4 +59,4 @@ public class Shop {
 	
 
 }
-*/
+
